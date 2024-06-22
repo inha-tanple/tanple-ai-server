@@ -69,20 +69,20 @@ for c in cnts:
         receiptCnt = approx
         break
     
-print("max area: ", max_area)
-print("min_contour: " , min_contour_area)
-print("contour area: ",cv2.contourArea(receiptCnt))
+# print("max area: ", max_area)
+# print("min_contour: " , min_contour_area)
+# print("contour area: ",cv2.contourArea(receiptCnt))
 
 
 receipt = image.copy()
 # 인식된 contour가 잘못 인식되었을 때
 def receiptCnt_process():
     if receiptCnt is None:
-        print("Could not find outline")
+        # print("Could not find outline")
         return False
 
     elif cv2.contourArea(receiptCnt) < min_contour_area:
-        print("contour is too small****************")
+        # print("contour is too small****************")
         return False
 
     return True
@@ -130,9 +130,9 @@ def correct_skew(image, delta=0.5, limit=10):  # limit이 얼마일지 정해야
 angle, corrected = correct_skew(receipt)
 print('Skew angle:', angle)
 # ocr 돌리는 최종 이미지 : corrected
-cv2.imshow('corrected', corrected)
-cv2.waitKey()
-cv2.destroyAllWindows()
+# cv2.imshow('corrected', corrected)
+# cv2.waitKey()
+# cv2.destroyAllWindows()
 
 
 
@@ -257,5 +257,5 @@ r1.date = date
 r1.time_str = time_str
 
     
-print("날짜:", r1.date)
-print("시간:", r1.time_str)
+# print("날짜:", r1.date)
+# print("시간:", r1.time_str)
