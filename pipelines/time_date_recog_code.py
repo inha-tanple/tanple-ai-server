@@ -98,7 +98,7 @@ if receiptCnt_process():
     
     
 # 기울어진 영수증 똑바르게
-def correct_skew(image, delta=0.5, limit=10):  # limit이 얼마일지 정해야함. 시간, 정확도 고려해서
+def correct_skew(image, delta=1, limit=10):  # limit이 얼마일지 정해야함. 시간, 정확도 고려해서
     def determine_score(arr, angle):
         data = inter.rotate(arr, angle, reshape=False, order=0)
         histogram = np.sum(data, axis=1, dtype=float)
